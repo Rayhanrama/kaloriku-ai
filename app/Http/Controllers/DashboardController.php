@@ -74,7 +74,7 @@ class DashboardController extends Controller
                 $targetDefisit = $request->input('target_defisit', 500);
 
                 // Ganti dengan URL public ngrok dari Colab
-                $flaskApiUrl = 'https://9683-34-168-218-235.ngrok-free.app'; // <- pastikan ini aktif
+                $flaskApiUrl = env('FLASK_API_URL', 'http://localhost:5000'); // <- pastikan ini aktif
 
                 try {
                     // Kirim POST ke endpoint /saran-ai
