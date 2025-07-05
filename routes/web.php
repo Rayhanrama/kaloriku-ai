@@ -6,18 +6,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MakananController;
 use App\Http\Controllers\AktivitasController;
 use App\Http\Controllers\DashboardController;
-use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 */
-
-Route::get('/run-migrate', function () {
-    Artisan::call('migrate', ['--force' => true]);
-    return 'Migrasi selesai.';
-});
 
 // Halaman publik (bisa diakses siapa saja)
 Route::get('/', function () {
