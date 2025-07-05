@@ -50,10 +50,37 @@ LangChain + Flask as Python wrapper
 ✅ Responsive UI dengan Tailwind CSS
 
 🚀 Setup Instructions
-1. Clone project
-bash
-Salin
-Edit
-git clone https://github.com/Rayhanrama/kaloriku-ai.git
+# 1. Clone project dari GitHub
+git clone https://github.com/RayhanRama/kaloriku-ai.git
+cd kaloriku-ai
+
+# 2. Install dependency PHP
+composer install
+
+# 3. Install dependency frontend (Vite, Tailwind, dsb.)
+npm install
+
+# 4. Salin file .env dan generate app key
+cp .env.example .env
+php artisan key:generate
+
+# 5. Edit file .env untuk sesuaikan database
+# Buka file .env dan ubah sesuai:
+# DB_DATABASE=kaloriku
+# DB_USERNAME=root
+# DB_PASSWORD=
+
+# 6. Jalankan migrasi dan seeder jika tersedia
+php artisan migrate 
+
+# 7. Jalankan Vite/Tailwind jika digunakan
+npm run dev
+
+# 8. Jalankan server Laravel
+php artisan serve
+
+# 9. Akses project di browser
+# http://127.0.0.1:8000
+
 
 cd kaloriku-ai
