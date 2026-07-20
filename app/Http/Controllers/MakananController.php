@@ -33,7 +33,7 @@ class MakananController extends Controller
         Makanan::create([
             'nama_makanan' => $request->nama_makanan,
             'jumlah_kalori' => $request->jumlah_kalori,
-            'waktu_konsumsi' => $request->waktu_konsumsi,
+            'waktu_konsumsi' => $request->waktu_konsumsi ?: now(),
             'user_id' => Auth::id(),
         ]);
 
@@ -73,7 +73,7 @@ class MakananController extends Controller
         $makanan->update([
             'nama_makanan' => $request->nama_makanan,
             'jumlah_kalori' => $request->jumlah_kalori,
-            'waktu_konsumsi' => $request->waktu_konsumsi,
+            'waktu_konsumsi' => $request->waktu_konsumsi ?: now(),
         ]);
 
         return redirect()->route('makanan.index')->with('success', 'Makanan berhasil diperbarui.');

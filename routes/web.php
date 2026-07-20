@@ -34,12 +34,12 @@ Route::middleware('auth')->group(function () {
     // Makanan CRUD
     Route::resource('makanan', MakananController::class);
 
-    // Aktivitas CRUD
-    Route::resource('aktivitas', AktivitasController::class);
+    // Aktivitas CRUD (implemented actions)
+    Route::resource('aktivitas', AktivitasController::class)->only(['index', 'create', 'store']);
 
     // (Opsional) Rencana AI, laporan, dll
-    Route::get('/saran-ai', [DashboardController::class, 'saranAi'])->name('saran.ai');
-    Route::get('/ai', [AIController::class, 'index'])->middleware('auth')->name('ai.index');
+    Route::post('/saran-ai', [DashboardController::class, 'saranAi'])->name('saran.ai');
+    Route::get('/ai', [AIController::class, 'index'])->name('ai.index');
 });
 
 // Route bawaan Breeze (login/register/logout)

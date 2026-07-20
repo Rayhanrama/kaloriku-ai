@@ -19,11 +19,12 @@
     </form>
 
     <!-- Tombol minta saran AI -->
-    <form method="GET" action="{{ route('saran.ai') }}" class="mb-6">
+    <form method="POST" action="{{ route('saran.ai') }}" class="mb-6">
+        @csrf
         <input type="hidden" name="kalori_masuk" value="{{ $kaloriMasuk }}">
         <input type="hidden" name="kalori_terbakar" value="{{ $kaloriTerbakar }}">
         <input type="hidden" name="target_defisit" value="500">
-        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
             Minta Saran AI
         </button>
     </form>

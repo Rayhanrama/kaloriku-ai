@@ -35,8 +35,8 @@ class AktivitasController extends Controller
             'nama_aktivitas' => $request->nama_aktivitas,
             'durasi' => $request->durasi,
             'kalori_terbakar' => $request->kalori_terbakar,
-            'waktu_aktivitas' => $request->waktu_aktivitas,
-            'user_id' => Auth::id(), // ✅ penting
+            'waktu_aktivitas' => $request->waktu_aktivitas ?: now(),
+            'user_id' => Auth::id(),
         ]);
 
         return redirect()->route('aktivitas.index')->with('success', 'Aktivitas berhasil ditambahkan.');

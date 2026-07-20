@@ -26,7 +26,7 @@
             </div>
             <div class="bg-white p-6 rounded-lg shadow">
                 <h2 class="text-xl font-semibold text-blue-600">AI Rekomendasi</h2>
-                <p class="mt-2 text-gray-600">Dapatkan saran makanan rendah kalori dari IBM Watson (segera hadir).</p>
+                <p class="mt-2 text-gray-600">Dapatkan saran makanan & aktivitas harian berbasis model IBM Granite AI.</p>
             </div>
         </div>
     </div>

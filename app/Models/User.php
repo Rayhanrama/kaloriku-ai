@@ -42,4 +42,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Get the food intake records for the user.
+     */
+    public function makanans()
+    {
+        return $this->hasMany(Makanan::class);
+    }
+
+    /**
+     * Get the activity records for the user.
+     */
+    public function aktivitas()
+    {
+        return $this->hasMany(Aktivitas::class);
+    }
 }
